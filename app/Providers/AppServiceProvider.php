@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Danielrhodeswarp\Portolan\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

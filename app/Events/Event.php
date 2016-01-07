@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Danielrhodeswarp\Portolan\Events;
 
 abstract class Event
 {

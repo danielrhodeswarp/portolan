@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
+/*
+Route::get('/', ['as' => 'welcome', function () {
     return view('welcome');
-});
+}]);
+*/
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +29,22 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
+    
     //
+    Route::get('/', ['as' => 'welcome', function () {
+        return view('welcome');
+    }]);
+    
+    //
+    Route::post('connect', 'ConnectController@postConnect')->name('connect.post-connect');
+    
+    //
+    Route::get('dashboard', 'DashboardController@getDashboard')->name('dashboard.get-dashboard');
+    
+    //
+    Route::get('dashboard/set-current-schema/{schema}', 'DashboardController@getSetCurrentSchema')->name('dashboard.get-set-current-schema');
 });
+
+
+
+

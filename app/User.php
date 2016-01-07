@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Danielrhodeswarp\Portolan;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

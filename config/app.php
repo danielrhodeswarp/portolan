@@ -151,10 +151,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Danielrhodeswarp\Portolan\Providers\AppServiceProvider::class,
+        Danielrhodeswarp\Portolan\Providers\AuthServiceProvider::class,
+        Danielrhodeswarp\Portolan\Providers\EventServiceProvider::class,
+        Danielrhodeswarp\Portolan\Providers\RouteServiceProvider::class,
 
     ],
 

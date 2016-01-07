@@ -1,45 +1,70 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layouts.global-layout')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('title', 'Connect')
+    
+@push('scripts')
+    <script src="/example.js"></script>
+@endpush
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+@push('styles')
+    <link rel="stylesheet" type="text/css" href="/example.css">
+@endpush
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+    
+@section('content')
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+<h1>Portolan - Connect</h1>
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
+@if (session('message'))
+    <p>{{ session('message') }}</p>
+@endif
 
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-    </body>
-</html>
+<form method="post" action="{{ route('connect.post-connect') }}">
+
+<div class="row column small-12 medium-6 large-6">
+
+<div class="row">
+  <div class="large-12 columns">
+    <label>Host</label>
+    <input type="text" name="host" value="localhost" />
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 columns">
+    <label>Type</label>
+    <select name="driver">
+      <option value="mysql">MySQL</option>
+      <option value="pgsql">PostgreSQL</option>
+      
+    </select>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 columns">
+    <label>User</label>
+    <input type="text" name="username" value="homestead" />
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 columns">
+    <label>Password</label>
+    <input type="text" name="password" value="secret" />
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 columns">
+    <label>Schema</label>
+    <input type="text" name="database" />
+  </div>
+</div>
+<div class="row">
+    <div class="large-12 columns">
+        {{ csrf_field() }}
+        <button type="submit" class="button float-right">Connect</button>
+    </div>
+</div>
+</div>
+    
+</form>
+
+@endsection
